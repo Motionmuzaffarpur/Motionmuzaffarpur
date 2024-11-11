@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motion Education uzaffarpur: JEE, NEET, Olympiads, Foundation Coachng Institute in Muzaffarpur</title>
+     <link rel="icon" href="Favicon.png" type="image/x-icon">
+    <style>
+        
+        /* Mobile के लिए */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    .navbar {
+        flex-direction: column;
+    }
+}
+
+/* Tablets के लिए */
+@media (min-width: 601px) and (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+/* Desktops के लिए */
+@media (min-width: 769px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+        
+        /* Flexbox Example */
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Grid Layout Example */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+        img {
+    max-width: 100%;
+    height: auto;
+}
+
+        
+        
+        
+        /* बॉडी और फॉन्ट के बेसिक स्टाइल */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* नेविगेशन बार */
+        .navbar {
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            height: 50px;
+        }
+
+        .logo img {
+            height: 120px;
+            margin-left: 50px;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            display: inline;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .menu a:hover {
+            color: #ddd;
+        }
+
+        /* मुख्य कंटेंट सेक्शन */
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px;
+            width: 95%;
+            height: 460px; /* स्लाइडर और फॉर्म दोनों की ऊँचाई यहाँ पर सेट करें */
+        }
+
+        .slider {
+            width: 70%;
+            height: 100%; /* स्लाइडर की ऊँचाई को 100% पर सेट करें */
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 1s ease;
+            height: 100%;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%; /* स्लाइड की ऊँचाई सेट करें */
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%; /* इमेज की ऊँचाई को स्लाइड के बराबर किया */
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* एरो बटन स्टाइल */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+
+        .arrow:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+
+        /* फॉर्म सेक्शन */
+        .form-container {
+            width: 30%;
+            background-color: #fff;
+            padding: 20px;
+            margin-left: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            height: 92%; /* स्लाइडर की ऊँचाई के बराबर सेट करें */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* फॉर्म के अंदर सामग्री को समान रूप से फैलाना */
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 10px;
+            margin-top: -10px;
+            color: #007bff;
+            font-size: 20px; /* फ़ॉन्ट साइज बढ़ाया गया */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            flex-grow: 1; /* फॉर्म ग्रुप्स को समान स्थान देने के लिए */
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            text-align: left;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 5px; /* पैडिंग बढ़ाई गई */
+            font-size: 14px; /* फ़ॉन्ट साइज बढ़ाया गया */
+            border: 2px solid #007bff; /* बॉर्डर रंग बदला गया */
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s; /* बॉर्डर रंग के लिए ट्रांजिशन जोड़ा गया */
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #0056b3; /* फोकस होने पर बॉर्डर रंग */
+            outline: none; /* फोकस पर आउटलाइन हटा दी गई */
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            padding: 12px; /* बटन की पैडिंग बढ़ाई गई */
+            font-size: 14px;
+            transition: background-color 0.3s, transform 0.2s;
+            border-radius: 5px; /* बटन के कोने को गोल बनाया गया */
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* फॉर्म ग्रुप्स के बीच में स्पेसिंग जोड़ने के लिए */
+        .form-group:not(:last-child) {
+            margin-bottom: 18px; /* अंतिम फॉर्म ग्रुप के लिए स्पेसिंग को हटा दिया गया */
+        }
+        
+        
+                /* Know Your Result सेक्शन */
+        .result-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            gap: 20px;
+            padding: 40px;
+            background-color: #fff;
+            border-top: 2px solid #ddd;
+        }
+
+        .result-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #fff;
+            background: linear-gradient(45deg, #ff5722, #ff9800);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .result-button:hover {
+            background: linear-gradient(45deg, #ff9800, #ff5722);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+            transform: translateY(-3px);
+        }
+
+        .result-button:active {
+            transform: translateY(1px);
+        }
+                 
+/* फूटर का बेसिक स्टाइल */
+.footer {
+    background-color: #000; /* ब्लैक बैकग्राउंड */
+    color: #fff;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    height: 280px;
+}
+
+.footer-column {
+    flex: 1 1 220px;
+    margin: 20px;
+    color: #fff;
+}
+
+.footer h2 {
+    font-size: 20px;
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+.footer p, .footer a {
+    color: #ddd;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #ffcc00;
+}
+
+/* Quick Links की स्टाइलिंग */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin: 8px 0;
+}
+
+/* सोशल मीडिया आइकन्स */
+.footer-social a {
+    display: inline-block;
+    margin: 0 5px;
+    transition: transform 0.3s;
+}
+
+.footer-social a img {
+    width: 40px;
+    height: 40px;
+}
+
+.footer-social a:hover {
+    transform: scale(1.1);
+}
+
+/* प्ले स्टोर आइकन */
+.playstore-icon {
+    width: 130px;
+    margin-bottom: 10px;
+}
+
+/* सब्सक्राइब फॉर्म */
+.subscribe-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subscribe-form input[type="email"] {
+    padding: 8px;
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+.subscribe-form button {
+    padding: 8px 20px;
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.subscribe-form button:hover {
+    background-color: #e6b800;
+}
+
+/* फूटर का बॉटम सेक्शन */
+.footer-bottom {
+    background-color: #222;
+    padding: 10px 0;
+    color: #bbb;
+    font-size: 12px;
+}
+
+/* छोटे स्क्रीन के लिए रेस्पॉन्सिव */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-column {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+    }
+}
+        
+    </style>
+</head>
+<body>
+    
+    
+
+    <!-- नेविगेशन बार -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="New%20Watermark.png" alt="लोगो">
+        </div>
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Our Achievements</a></li>
+            <li><a href="#">Result</a></li>
+            <li><a href="#">Batches</a></li>
+            <li><a href="#">Why Motion</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">News and Media</a></li>
+        </ul>
+    </header>
+
+    <!-- मुख्य कंटेंट सेक्शन -->
+    <div class="main-content">
+        <!-- स्लाइडर सेक्शन -->
+        <div class="slider">
+            <div class="slides">
+                <div class="slide">
+                    <img src="B1.jpeg" alt="बैनर 1">
+                </div>
+                <div class="slide">
+                    <img src="B2.jpeg" alt="बैनर 2">
+                </div>
+                <div class="slide">
+                    <img src="B3.jpeg" alt="बैनर 2">
+                </div>
+                <div class="slide">
+                    <img src="B4.jpeg" alt="बैनर 2">
+                </div>
+                <div class="slide">
+                    <img src="B5.jpeg" alt="बैनर 2">
+                </div>
+                <div class="slide">
+                    <img src="B6.png" alt="बैनर 2">
+                </div>
+            </div>
+            <button class="arrow arrow-left" onclick="showPreviousSlide()">&#10094;</button>
+            <button class="arrow arrow-right" onclick="showNextSlide()">&#10095;</button>
+        </div>
+
+        <!-- फॉर्म सेक्शन -->
+        <div class="form-container">
+            <h2>Registration Form</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile</label>
+                    <input type="text" id="mobile" name="mobile" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-Mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="class">Select Class</label>
+                    <select id="class" name="class" required>
+                        <option value="">Select Class</option>
+                        <option value="10">Class 10</option>
+                        <option value="11">Class 11</option>
+                        <option value="12">Class 12</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="course">Select Course</label>
+                    <select id="course" name="course" required>
+                        <option value="">Select Course</option>
+                        <option value="engineering">Engineering</option>
+                        <option value="medical">Medical</option>
+                        <option value="foundation">Foundation</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+    
+     <div class="result-section">
+        <button class="result-button" onclick="redirectToResult('mtse.html')">MTSE Result</button>
+        <button class="result-button" onclick="redirectToResult('most.html')">MOST Result</button>
+        <button class="result-button" onclick="redirectToResult('classtest.html')">Class Test Result</button>
+        <button class="result-button" onclick="redirectToResult('paste your link')">Pay Your Fee</button>
+        <button class="result-button" onclick="redirectToResult('details.html')">Your Details</button>
+    </div>
+  
+    
+ <!-- फूटर सेक्शन -->
+<footer class="footer">
+    <div class="footer-container">
+        
+        <!-- Contact Us कॉलम -->
+        <div class="footer-column footer-contact">
+            <h2>Contact Us</h2>
+            <p>Sinha Complex, Miscot Lane,
+                Near Jubba Sahni Park, Club Road
+                Mithanpura, Muzaffarpur, Bihar 842002</p>
+            <p>Phone: +91-8102918030/31</p>
+            <p>Email: studycenter_muzaffarpur@motion.ac.in</p>
+        </div>
+        
+        <!-- Follow Us कॉलम -->
+        <div class="footer-column footer-social">
+            <h2>Follow Us</h2>
+            <a href="https://www.facebook.com/MotionMuzaffarpur/" target="_blank"><img src="FB.png" alt="Facebook"></a>
+            <a href="#"><img src="X.png" alt="Twitter"></a>
+            <a href="#"><img src="INSTA.png" alt="Instagram"></a>
+            <a href="#"><img src="Youtube.png" alt="YouTube"></a>
+        </div>
+        
+        <!-- Quick Links कॉलम -->
+        <div class="footer-column footer-links">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Batches</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        
+        <!-- Play Store और सब्सक्राइब कॉलम -->
+        <div class="footer-column footer-subscribe">
+            <h2>Download App</h2>
+            <a href="#"><img src="Play%20Store.png" alt="Play Store" class="playstore-icon"></a>
+            <h2>Subscribe to Our Newsletter</h2>
+            <form action="#" method="post" class="subscribe-form">
+                <input type="email" name="email" placeholder="Your Email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Motion Muzaffarpur All Rights Reserved</p>
+    </div>
+</footer>
+    
+    
+    <script>
+let currentSlide = 0;
+
+function showSlide(index) {
+    const slides = document.querySelector('.slides');
+    const totalSlides = slides.children.length;
+
+    // Wrap around the slides
+    if (index >= totalSlides) {
+        currentSlide = 0;
+    } else if (index < 0) {
+        currentSlide = totalSlides - 1;
+    } else {
+        currentSlide = index;
+    }
+
+    // Update slide position
+    slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
+function showNextSlide() {
+    showSlide(currentSlide + 1);
+}
+
+function showPreviousSlide() {
+    showSlide(currentSlide - 1);
+}
+ 
+        function redirectToResult(url) {
+            window.location.href = url;
+        }
+      
+    </script>
+
+    
+</body>
+</html>
